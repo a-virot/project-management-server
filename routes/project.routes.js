@@ -21,7 +21,6 @@ router.post('/projects', (req, res, next) => {
   });
 
 
-
 // GET /api/projects -  Retrieves ALL projects
 router.get("/projects", (req, res, next) => {
     Project.find()
@@ -29,7 +28,6 @@ router.get("/projects", (req, res, next) => {
     .then(allProjects => res.json(allProjects))
     .catch(err => res.json(err));
   });
-
 
 
 // GET /api/projects/:projectId -  Retrieves a specific project by id
@@ -66,7 +64,6 @@ router.put('/projects/:projectId', (req, res, next)=>{
 });
 
 // DELETE  /api/projects/:projectId  -  Deletes a specific project by id
-
 router.delete('/projects/:projectId', (req, res, next)=> {
     const {projectId} = req.params;
 
@@ -76,7 +73,7 @@ router.delete('/projects/:projectId', (req, res, next)=> {
     }
 
     Project.findByIdAndDelete(projectId)
-    .then(() => res.json({ message: `Project with ${projectId} is removed successfully.` }))
+    .then(() => res.json({ message: `Project with id ${projectId} is removed successfully.` }))
     .catch(error => res.json(error));
 
 });

@@ -26,7 +26,7 @@ require("./config")(app);
 const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
 
-// MA ROUTE TEST - OK  :
+// MA ROUTE TEST  :
 const testRouter = require("./routes/test.routes");
 app.use("/api", testRouter);
 
@@ -34,7 +34,7 @@ app.use("/api", testRouter);
 // const test2Router = require("./routes/test2.routes");
 // app.use("/api", test2Router);
 
-// ADD : Require the newly created project.routes.js file. 
+// ADD : Require my newly created project.routes.js file. 
 const projectRouter = require("./routes/project.routes");     
 app.use("/api", projectRouter);
 
